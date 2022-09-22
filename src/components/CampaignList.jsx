@@ -12,8 +12,6 @@ const CampaignList = () => {
   const [endDate, setEndDate] = useState(null);
   // this list is use for the search by text
   const [dateFilterList, setDateFilterList] = useState([]);
-  
-  console.log(JSON.stringify(campaign.campaignsList))
 
   useEffect(() => {
     setCampaignList([...campaign.campaignsList]);
@@ -134,7 +132,7 @@ const CampaignList = () => {
         </MDBTableHead>
         <MDBTableBody data-testid="data-rows">
           {campaignList.map((data, i) => (
-            <tr key={i} >
+            <tr key={i}>
               <th>{data.name}</th>
               <td>{data.userName}</td>
               <td>{data.startDate}</td>
