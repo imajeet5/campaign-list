@@ -38,7 +38,10 @@ const CampaignList = () => {
   const handleDateSearch = (event) => {
     event.preventDefault();
 
-    if (startDate === null || endDate === null) {
+    if (!startDate || !endDate) {
+      setCampaignList(campaign.campaignsList);
+
+      setDateFilterList(campaign.campaignsList);
       return;
     }
 
