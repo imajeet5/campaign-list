@@ -45,10 +45,17 @@ const CampaignList = () => {
       return;
     }
 
+    const inputStartDate = new Date(startDate);
+    const inputEndDate = new Date(endDate);
+
+    // if startDate within the range or end date within the range
+
     const filteredList = campaign.campaignsList.filter((el) => {
       return (
-        new Date(el.startDate) > new Date(startDate) &&
-        new Date(el.endDate) < new Date(endDate)
+        (new Date(el.startDate) > inputStartDate &&
+          new Date(el.startDate) < inputEndDate) ||
+        (new Date(el.endDate) > inputStartDate &&
+          new Date(el.endDate) < inputEndDate)
       );
     });
 
@@ -115,8 +122,12 @@ const CampaignList = () => {
           />
 
           <label htmlFor="search">
-            <button type="submit" className="searchInput-submit">
-              <FaSearch aria-label="search" data-testid="searchInput-submit" />
+            <button
+              type="submit"
+              className="searchInput-submit"
+              data-testid="searchInput-submit"
+            >
+              <FaSearch aria-label="search" />
             </button>
           </label>
         </form>
@@ -133,9 +144,9 @@ const CampaignList = () => {
             <th scope="col">Budget</th>
           </tr>
         </MDBTableHead>
-        <MDBTableBody data-testid="data-rows">
+        <MDBTableBody>
           {campaignList.map((data, i) => (
-            <tr key={i}>
+            <tr key={i} data-testid="data-row">
               <th>{data.name}</th>
               <td>{data.userName}</td>
               <td>{data.startDate}</td>
