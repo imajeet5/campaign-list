@@ -1,0 +1,49 @@
+.dot {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.dotRed {
+  background-color: red;
+}
+
+.dotGreen {
+  background-color: green;
+}
+
+.box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchInput {
+  border: 1px solid #f1f1f4;
+  background: #f1f2f7;
+  padding: 8px 12px;
+  border-radius: '3px';
+}
+
+.searchInput-submit {
+  border: 0;
+  position: relative;
+  margin-left: -35px;
+  background: transparent;
+}
+
+.date-input {
+    margin-right: 20px;
+    display: inline-block;
+}
